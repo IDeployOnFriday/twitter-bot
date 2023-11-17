@@ -1,21 +1,16 @@
-import tweepy
-import auth
-from auth import (
-    consumer_key,
-    consumer_secret,
-    access_token,
-    access_token_secret
-)
+import datetime
+import post
+from get_message import read_from_file
+
 
 if __name__ == '__main__':
-    import tweepy
+    print("starting up ")
 
-    client = tweepy.Client(consumer_key=auth.consumer_key,
-                           consumer_secret=auth.consumer_secret,
-                           access_token=auth.access_token,
-                           access_token_secret=auth.access_token_secret)
+    x = datetime.datetime.now()
+    print(x.strftime("%A"))
+    print(x.strftime("%H"))
 
-    response = client.create_tweet(text='Devops ')
+    message = read_from_file()
 
-    print(response)
+    post.post_to_platform(message, False)
 
