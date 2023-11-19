@@ -16,7 +16,5 @@ def post_to_platform(message, test):
                                access_token_secret=auth.access_token_secret)
 
         response = client.create_tweet(text=message)
-
-        print(response)
     else:
-        print("testing " + message)
+        print(".......... \n" + message)
