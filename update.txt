@@ -1,0 +1,3 @@
+comments, because self documenting code is only really in the eyes of the author, lets see more # // ```
+variables = storing stuff, maybe even in the correct type -> string
+types because you are a noob if you every String boolean = "True"

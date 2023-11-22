@@ -2,48 +2,106 @@ import datetime
 import random
 
 
-
 def read_from_file():
     f = open("demofile.txt", "r")
     message = f.read()
     print(message)
     return message
 
+
+def read_list_from_file():
+    with open('demofile.txt') as f:
+        lines = f.read().splitlines()
+    print(lines)
+
+    g1 = random.choice(lines)
+    print(g1)
+    return lines
+
+
 def get_greeting():
+    comunity_list = [
+        'software engineers',
+        'Coders',
+        'Devs',
+        'Developers',
+        'Developers and HTML\'ers',
+        'Python\'ers',
+        'The Java crew'
+    ]
+
     g1_list = [
-        'Good Evening ',
-        'Happy Evening',
+        'Good {}',
         'What\'s up?',
         'How\'s it going?'
     ]
 
-    g2_list = [
-        'Hope you are all having a great',
-        'wishing you all a great',
-    ]
-
     # get day of week
-    x = datetime.datetime.now()
-    day = x.strftime("%A")
+    day = datetime.datetime.now().strftime("%A")
 
-    g1 = random.choice(g1_list)
-    g2 = random.choice(g2_list)
+    time_of_day = get_greeting_time_of_day(int(datetime.datetime.now().strftime("%H")))
 
-    greeting = ' {} \n {} {}'.format(g1, g2, day)
+    g1 = random.choice(g1_list).format(time_of_day)
+    comunity = random.choice(comunity_list)
+
+    greeting = ' {}, {} '.format(g1, comunity)
     return greeting
 
 
+def get_greeting_time_of_day(hour):
+    if hour < 12:
+        time_of_day = 'Morning'
+    elif 12 < hour < 18:
+        time_of_day = 'Afternoon'
+    elif hour > 18:
+        time_of_day = 'Evening'
+    return time_of_day
+
+
 def get_body():
-    return 'I hav spent this evening debugging, its like being the detective in a crime drama where you are also the murderer'
+    # open the sample file used
+    file = open('update.txt')
+
+    # read the content of the file opened
+    content = file.readlines()
+
+    file.close()
+
+    today = datetime.datetime.now()
+    d0 = datetime.date(2023, 11, 22)
+    d1 = datetime.date(today.year, today.month, today.day)
+    delta = d1 - d0
+
+    line = content[delta.days]
+
+    return (line)
+
+
 def get_hashtags():
     return "#devs #100DaysOfCode"
 
+
 def generate_message():
-    message = ""
     greeting = get_greeting()
+    num_of_days_update = get_100_days_code()
     body = get_body()
     hashtags = get_hashtags()
-    message = " {} \n {} \n {}".format(greeting, body, hashtags)
+    message = "{} \n {} \n {} \n {}".format(greeting, num_of_days_update, body, hashtags)
     return message
 
 
+def get_100_days_code():
+
+    learning_list = [
+        ', Today i am learning',
+        ', Today i am revisiting',
+        ', Today i hope to understand better'
+    ]
+    today = datetime.datetime.now()
+
+    d0 = datetime.date(2023, 10, 8)
+    d1 = datetime.date(today.year, today.month, today.day)
+    delta = d1 - d0
+    message_end = g1 = random.choice(learning_list)
+    message = "100 Days of code, Day " + str(delta.days) + message_end
+    return message
