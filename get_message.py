@@ -60,7 +60,7 @@ def get_greeting_time_of_day(hour):
 
 def get_body():
     # open the sample file used
-    file = open('update.txt')
+    file = open('~/Desktop/twitter-bot/update.txt')
 
     # read the content of the file opened
     content = file.readlines()
@@ -68,7 +68,7 @@ def get_body():
     file.close()
 
     today = datetime.datetime.now()
-    d0 = datetime.date(2023, 11, 22)
+    d0 = datetime.date(2023, 11, 23)
     d1 = datetime.date(today.year, today.month, today.day)
     delta = d1 - d0
 
