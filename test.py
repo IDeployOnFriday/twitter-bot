@@ -1,4 +1,4 @@
-from get_message import get_greeting_time_of_day, read_list_from_file
+from get_message import get_greeting_time_of_day, read_list_from_file, get_100_days_code
 from main import get_post
 import unittest
 
@@ -29,6 +29,9 @@ class TestStringMethods(unittest.TestCase):
             i += 1
 
         print("Everything passed")
+
+    def test_get_100_days_code(self):
+        get_100_days_code()
 
 if __name__ == '__main__':
     unittest.main()
