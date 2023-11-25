@@ -2,14 +2,14 @@ import datetime
 import random
 
 
-def read_from_file():
+def read_from_file() -> str: 
     f = open("demofile.txt", "r")
     message = f.read()
     print(message)
     return message
 
 
-def read_list_from_file():
+def read_list_from_file() -> str:
     with open('demofile.txt') as f:
         lines = f.read().splitlines()
     print(lines)
@@ -19,7 +19,7 @@ def read_list_from_file():
     return lines
 
 
-def get_greeting():
+def get_greeting()  -> str:
     comunity_list = [
         'software engineers',
         'Coders',
@@ -48,7 +48,7 @@ def get_greeting():
     return greeting
 
 
-def get_greeting_time_of_day(hour):
+def get_greeting_time_of_day(hour) -> str:
     if hour < 12:
         time_of_day = 'Morning'
     elif 12 < hour < 18:
@@ -77,7 +77,7 @@ def get_body():
     return (line)
 
 
-def get_hashtags():
+def get_hashtags() -> str:
     return "#devs #100DaysOfCode"
 
 
@@ -90,7 +90,7 @@ def generate_message():
     return message
 
 
-def get_100_days_code():
+def get_100_days_code() -> str:
 
     learning_list = [
         ', Today i am learning',
