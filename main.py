@@ -2,12 +2,11 @@ import datetime
 import sys
 
 import post
-from get_message import read_from_file, generate_message
-
+from get_message import generate_message
 
 if __name__ == '__main__':
     print("starting up ")
-
+    # Get args
     if len(sys.argv) > 1:
         test_mode = sys.argv[1]
     else:

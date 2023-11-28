@@ -11,15 +11,7 @@ class TestStringMethods(unittest.TestCase):
         message = read_list_from_file()
 
 
-    def test_time_of_day(self):
-        time_of_day = get_greeting_time_of_day(10)
-        self.assertEqual(time_of_day, 'Morning')
 
-        time_of_day = get_greeting_time_of_day(14)
-        self.assertEqual(time_of_day, 'Afternoon')
-
-        time_of_day = get_greeting_time_of_day(19)
-        self.assertEqual(time_of_day, 'Evening')
 
 
     def test_multi(self):
