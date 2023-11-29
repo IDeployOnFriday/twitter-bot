@@ -10,6 +10,7 @@ def get_hashtags() -> str:
         '#technology'
     ]
 
+
     hashtag2 = random.choice(h1_list)
     hashtags = '{} {} '.format("#100DaysOfCode", hashtag2)
 

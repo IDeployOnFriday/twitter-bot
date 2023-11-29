@@ -16,5 +16,6 @@ def get_100_days_code() -> str:
     d0 = datetime.date(2023, 10, 8)
     d1 = datetime.date(today.year, today.month, today.day)
     delta = d1 - d0
-    message = "Day " + str(delta.days) + "/100 of the #100daysofcodechallenge complete!"
+    message = (" "
+               "✅ Day ") + str(delta.days) + "/100 of the #100daysofcodechallenge complete! 🚀"
     return message
