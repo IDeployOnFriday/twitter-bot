@@ -19,3 +19,12 @@ def get_100_days_code() -> str:
     message = (" "
                "✅ Day ") + str(delta.days) + "/100 of the #100daysofcodechallenge complete! 🚀"
     return message
+
+def get_emoji() -> str:
+    h1_list = [
+        '✨',
+        '🚀',
+        '🎉',
+        '💪💡',
+        '📚'
+    ]

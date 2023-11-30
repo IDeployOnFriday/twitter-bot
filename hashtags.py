@@ -7,7 +7,8 @@ def get_hashtags() -> str:
         '#LearnToCode',
         '#Coding',
         '#DevOps',
-        '#technology'
+        '#technology',
+        '#coders'
     ]
 
 
