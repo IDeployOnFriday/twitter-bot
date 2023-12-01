@@ -1,4 +1,5 @@
 import datetime
+import secret
 from greetings import get_greeting
 from hashtags import get_hashtags
 
@@ -20,7 +21,7 @@ def get_100_days_code() -> str:
                "✅ Day ") + str(delta.days) + "/100 of the #100daysofcodechallenge complete! 🚀"
     return message
 
-def get_emoji() -> str:
+def get_random_emoji() -> str:
     h1_list = [
         '✨',
         '🚀',
@@ -28,3 +29,6 @@ def get_emoji() -> str:
         '💪💡',
         '📚'
     ]
+    return secret.choice(h1_list)
+    
+    
